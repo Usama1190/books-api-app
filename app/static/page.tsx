@@ -20,11 +20,14 @@ export default async function staticPage() {
   return (
     <div>
       <h1>Static page</h1>
-      {books.map((book: Book) => {
-        <ul key={book.id}>
-          <li>{book.name} - {book.type}</li>
-        </ul>
-      })}
+      
+      <ul >
+        {books.map((book: Book) => {
+          <li key={book.id}>
+            {book.name} - {book.type}
+          </li>
+        })}
+      </ul>
     </div>
-  )
+  );
 }
