@@ -21,7 +21,7 @@ export default async function staticPage() {
     <div>
       <h1>Static page</h1>
       
-      <ul >
+      <ul>
         {books.map((book: Book) => {
           <li key={book.id}>
             {book.name} - {book.type}

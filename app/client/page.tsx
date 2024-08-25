@@ -4,12 +4,12 @@ import React from 'react';
 import useSWR from 'swr';
 
 
-const url = "https://api.quotable.io/random?tags=technology";
-// const url = "https://simple-books-api.glitch.me/books";
+// const url = "https://api.quotable.io/random?tags=technology";
+const url = "https://simple-books-api.glitch.me/books";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export default function clientPage() {
+export default function ClientPage() {
     const {data, error, isLoading} = useSWR(url, fetcher);
 
     if(error) return <div>Error</div>
@@ -23,8 +23,8 @@ export default function clientPage() {
 
     return (
         <div>
-        <h1>Client page</h1>
-        {data}
+            <h1>Client page</h1>
+            {data.content}
         </div>
     );
 }
